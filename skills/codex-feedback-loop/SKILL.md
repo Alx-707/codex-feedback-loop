@@ -102,7 +102,7 @@ If the diff is very large (>2000 lines), warn the user and suggest file filters.
 ```bash
 codex exec \
   -m ${CODEX_MODEL} \
-  --reasoning-effort high \
+  -c reasoning_effort="high" \
   -s read-only \
   -o /tmp/codex-review-${REVIEW_ID}.md \
   "$(cat ${CLAUDE_PLUGIN_ROOT}/skills/codex-feedback-loop/review-prompt.md)
@@ -188,7 +188,8 @@ Please re-review. Focus on:
 3. Any remaining issues in the original diff
 
 If everything looks good, end with: VERDICT: APPROVED
-If more changes are needed, end with: VERDICT: REVISE" 2>&1 | tee /tmp/codex-review-${REVIEW_ID}.md | tail -100
+If more changes are needed, end with: VERDICT: REVISE" \
+  -o /tmp/codex-review-${REVIEW_ID}.md
 ```
 
 Go back to **Step 5C**.
@@ -210,7 +211,7 @@ If there is no plan in context, ask the user what they want reviewed.
 ```bash
 codex exec \
   -m ${CODEX_MODEL} \
-  --reasoning-effort high \
+  -c reasoning_effort="high" \
   -s read-only \
   -o /tmp/codex-review-${REVIEW_ID}.md \
   "Review the implementation plan in /tmp/claude-plan-${REVIEW_ID}.md. Focus on:
@@ -260,7 +261,8 @@ Here's what I changed:
 [List specific changes]
 
 Please re-review. If the plan is now solid, end with: VERDICT: APPROVED
-If more changes are needed, end with: VERDICT: REVISE" 2>&1 | tee /tmp/codex-review-${REVIEW_ID}.md | tail -100
+If more changes are needed, end with: VERDICT: REVISE" \
+  -o /tmp/codex-review-${REVIEW_ID}.md
 ```
 
 Go back to **Step 5P**.
