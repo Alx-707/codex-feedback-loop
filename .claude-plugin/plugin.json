@@ -1,0 +1,21 @@
+{
+  "name": "codex-feedback-loop",
+  "version": "2.0.0",
+  "description": "Autonomous Codex review loop for code and plans — auto-detects mode, Claude analyzes & fixes, re-submits until approved (max 5 rounds)",
+  "author": {
+    "name": "shawn"
+  },
+  "homepage": "https://github.com/Alx-707/codex-feedback-loop",
+  "repository": "https://github.com/Alx-707/codex-feedback-loop",
+  "license": "MIT",
+  "keywords": [
+    "code-review",
+    "plan-review",
+    "codex",
+    "feedback-loop",
+    "iterative",
+    "autonomous",
+    "claude-code"
+  ],
+  "skills": "./skills/"
+}
