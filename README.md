@@ -51,11 +51,11 @@ You see: what was fixed/revised, what was skipped, final status
 ## Installation
 
 ```bash
-# Clone the plugin
-git clone https://github.com/Alx-707/codex-feedback-loop.git ~/.claude/plugins/codex-feedback-loop
+# Clone into Claude Code skills directory
+git clone https://github.com/Alx-707/codex-feedback-loop.git ~/.claude/skills/codex-feedback-loop
 
 # Or copy manually
-cp -r codex-feedback-loop ~/.claude/plugins/
+cp -r codex-feedback-loop ~/.claude/skills/
 ```
 
 Restart Claude Code. The `/codex-feedback-loop` skill will be available.
